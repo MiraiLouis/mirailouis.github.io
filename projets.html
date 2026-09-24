@@ -4,11 +4,13 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="fr">
 	<head>
-		<title>Mes projets</title>
+		<title>Mes projets — Louis CHEN</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Projets en intelligence artificielle de Louis CHEN : RAG et agents IA chez Thales, classification NLP multilabel, prédiction du churn, vision par ordinateur et algorithmique." />
+		<link rel="icon" href="images/logo.svg" type="image/svg+xml" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -19,88 +21,123 @@
 
 				<!-- Header -->
 				<header id="header">
-					<h1><a href="index.html" style="text-decoration: none; color: inherit; border-bottom: none;">Mes projets</a></h1>
-					<p>Mes principaux projets en informatique</p>
+					<h1><a href="index.html">Mes projets</a></h1>
+					<p>Mes principaux projets en intelligence artificielle et en informatique</p>
 				</header>
-				
 
 				<!-- Main -->
 					<div id="main">
 
 						<!-- Content -->
 							<section id="content" class="main">
-								<h2 id="plu-section">
-									Projet d'extraction d'informations à partir de cartes avec une IA
-									<a href="https://github.com/MiraiLouis/MapExtraction" class="icon brands fa-github alt" style="text-decoration: none; margin-left: 10px; font-size: 0.5em;">
+
+								<h2 class="project-group">Projets professionnels</h2>
+
+								<h3 id="thales-section">Génération de code AltaRica par RAG et orchestration d'agents IA</h3>
+								<p class="stack">Thales &middot; 2025 &middot; LangChain, LangGraph, llama-server</p>
+								<p>Ce projet, mené lors de mon stage d'ingénieur IA chez Thales, visait à appliquer l'IA générative à la modélisation de sûreté de fonctionnement (MBSA). Le travail a couvert l'ensemble de la chaîne, de l'analyse du besoin à l'évaluation de la solution :</p>
+								<p>
+									- <strong>Conception d'architecture : </strong>étude et présentation de plusieurs architectures de solutions IA auprès de parties prenantes métiers et techniques, afin d'arbitrer entre coût, latence et fiabilité des sorties. <br />
+									- <strong>Système RAG : </strong>développement d'un pipeline de génération automatique de code AltaRica, un langage de modélisation propre à l'analyse de sûreté. Le RAG s'appuie sur une base de modèles existants et de documentation afin de contraindre la génération à la syntaxe et aux conventions du langage. <br />
+									- <strong>Orchestrateur d'agents : </strong>conception d'un orchestrateur d'agents IA pour le logiciel MBSA System Analyst, enchaînant les étapes de modélisation pour que l'ingénieur se concentre sur la validation plutôt que sur la rédaction du modèle. <br />
+									- <strong>Validation : </strong>évaluation sur un cas d'étude réel, où la solution a ramené le temps de modélisation d'une semaine à une journée. <br />
+								</p>
+								<p>Les modèles étaient servis localement via llama-server, une contrainte forte du contexte industriel qui a orienté les choix d'architecture vers des modèles de taille modérée et un découpage fin des tâches entre agents.</p>
+
+								<h2 class="project-group">Projets data et machine learning</h2>
+
+								<h3 id="nlp-section">Classification de contenus textuels sensibles</h3>
+								<p class="stack">2026 &middot; NLP, XGBoost, Scikit-learn</p>
+								<p>Développement d'un pipeline NLP de classification multilabel visant à identifier une dizaine de catégories de contenus sensibles dans des textes, un même texte pouvant relever de plusieurs catégories à la fois.</p>
+								<p>
+									- <strong>Prétraitement : </strong>nettoyage, normalisation et vectorisation des textes afin d'obtenir des représentations exploitables par des modèles classiques. <br />
+									- <strong>Modélisation : </strong>entraînement de classifieurs XGBoost en configuration multilabel, avec réglage des hyperparamètres. <br />
+									- <strong>Évaluation : </strong>mesure des performances par catégorie, pour identifier les classes les plus difficiles et les déséquilibres du jeu de données. <br />
+								</p>
+
+								<h3 id="churn-section">Prédiction du churn avec optimisation économique</h3>
+								<p class="stack">2026 &middot; EDA, Feature engineering, Machine Learning</p>
+								<p>Modélisation du départ des clients (churn), avec une particularité : le modèle n'est pas évalué uniquement sur des métriques statistiques, mais sur des indicateurs économiques.</p>
+								<p>
+									- <strong>Analyse exploratoire : </strong>identification des variables associées au départ des clients et construction de variables dérivées. <br />
+									- <strong>Modélisation : </strong>entraînement et comparaison de plusieurs modèles de classification. <br />
+									- <strong>Optimisation économique : </strong>choix du seuil de décision en fonction du coût d'une action de rétention et du revenu préservé, plutôt que sur la seule maximisation d'un score. Cette approche permet de dimensionner concrètement une campagne de rétention. <br />
+								</p>
+
+								<h2 class="project-group">Projets académiques</h2>
+
+								<h3 id="plu-section">
+									Extraction d'informations à partir de cartes PDF
+									<a href="https://github.com/MiraiLouis/MapExtraction" class="icon brands fa-github alt repo-link">
 										<span class="label">GitHub</span>
 									</a>
-								</h2>								
-								<p>Dans un contexte où les prix de l'immobilier, en particulier des terrains constructibles, ont augmenté de manière significative en raison de la stricte réglementation d'utilisation des sols. Les règles sont actuellement déterminées par de nombreuses autorités locales, rendant les informations extrêmement dispersées et non homogènes.</p>
-								<p><span class="image left"><img src="images/processus-cartes.png" alt="" /></span>
-									Ce projet de groupe vise à : <br>
-									- Développer un programme pour géocoder automatiquement les cartes issues des PDF et les convertir en fichiers raster géocodés. <br>
-									- Extraire les informations pertinentes de ces cartes. <br>
-									- Évaluer la fiabilité de la méthode et son potentiel pour des mises à jour futures. <br> <br>
-								Premièrement, nous avons extrait les images des documents PLU récupérées sur le site <a href="https://www.geoportail-urbanisme.gouv.fr/api/">Geoportail</a>, en utilisant la librairie Python Fitz, ces images contiennent des cartes mais aussi des graphiques, des photos ou encore des documents. Il fallait donc commencer par classifier les cartes. <br>
-								Ensuite, nous avons crée un dataset d'images de cartes générées avec QGIS et ajouter les images non cartographiques pour augmenter la diversité du dataset. <br>
-								Enfin, nous avons entrainé un modèle de classification afin de reconnaître les cartes parmi les images extraits des PLU, à partir des architectures VGG16 et ResNet.<br>
-								Après avoir entrainé le modèle, nous avons obtenu un taux de précision de 99% sur le dataset de test. <br> <br>
-								Puis, après avoir extrait les cartes, nous avons utilisé la librairie OpenCV pour détecter les contours des cartes et les découper pour ensuite les géocoder avec GDAL. <br>
+								</h3>
+								<p class="stack">2024 &middot; CNN (VGG16/ResNet), OpenCV, GDAL</p>
+								<p>Les prix de l'immobilier, en particulier des terrains constructibles, ont fortement augmenté sous l'effet d'une réglementation stricte de l'utilisation des sols. Ces règles sont définies par de nombreuses autorités locales, ce qui rend l'information très dispersée et non homogène.</p>
+								<p><span class="image left"><img src="images/processus-cartes.png" alt="Schéma du processus d'extraction et de géocodage des cartes issues des PLU" /></span>
+									Ce projet de groupe visait à : <br />
+									- développer un programme pour géocoder automatiquement les cartes issues des PDF et les convertir en fichiers raster géocodés ; <br />
+									- extraire les informations pertinentes de ces cartes ; <br />
+									- évaluer la fiabilité de la méthode et son potentiel pour des mises à jour futures. <br /><br />
+								Nous avons d'abord extrait les images des documents PLU récupérés sur le site <a href="https://www.geoportail-urbanisme.gouv.fr/api/" target="_blank" rel="noopener">Geoportail</a> à l'aide de la librairie Python Fitz. Ces images contiennent des cartes, mais aussi des graphiques, des photos et des documents : il fallait donc commencer par les classifier. <br />
+								Nous avons ensuite constitué un jeu de données d'images de cartes générées avec QGIS, complété par des images non cartographiques pour en augmenter la diversité. <br />
+								Un modèle de classification a enfin été entraîné à partir des architectures VGG16 et ResNet pour reconnaître les cartes parmi les images extraites des PLU. <strong>Cette étape de classification atteint 99 % de précision sur le jeu de test.</strong> <br /><br />
+								Les cartes extraites sont ensuite traitées avec OpenCV pour détecter leurs contours et les découper, avant d'être géocodées avec GDAL. <strong>Sur la chaîne complète, le géocodage automatique atteint 80 % de précision</strong> — c'est cette valeur, et non les 99 % de l'étape de classification, qui caractérise la performance de bout en bout du pipeline.
 								</p>
 
-								<br><br>
-								
-								<h2 id="tumor-section">Détection de tumeur grâce à l'IA
-									<!-- <a href="https://github.com/MiraiLouis/MapExtraction" class="icon brands fa-github alt" style="text-decoration: none; margin-left: 10px; font-size: 0.5em;">
-										<span class="label">GitHub</span>
-									</a> -->
-								</h2>
-								<p>Dans ce projet, l'objectif était de développer une méthode de détection de tumeurs en utilisant des techniques de deep learning appliquées aux images médicales. Le processus s'est déroulé en plusieurs étapes clés :</p>
-								<p><span class="image left"><img src="images/tumor.jpg" alt="" /></span>
-									- <strong>Prétraitement des données d'images : </strong> Traitement initial des images pour améliorer la qualité des données en vue de l'apprentissage, incluant des ajustements de contraste, de netteté, et des opérations de redimensionnement ou de suppression de bruit. <br>
-									- <strong>Utilisation d’autoencodeurs :</strong>Développement et utilisation d'autoencodeurs pour effectuer un premier traitement des images et pour extraire des caractéristiques importantes de manière non supervisée, facilitant la segmentation et la reconnaissance des zones potentiellement tumorales. <br>
-									- <strong>Entraînement d’un modèle de deep learning :</strong>Mise en place et entraînement d’un modèle de classification (CNN) pour détecter les tumeurs sur les images prétraitées. <br> <br>
+								<h3 id="tumor-section">Détection de tumeurs par deep learning</h3>
+								<p class="stack">Autoencodeurs &middot; CNN &middot; Imagerie médicale</p>
+								<p>L'objectif était de développer une méthode de détection de tumeurs en appliquant des techniques de deep learning à des images médicales. Le projet s'est déroulé en plusieurs étapes :</p>
+								<p><span class="image left"><img src="images/tumor.jpg" alt="Image médicale utilisée pour l'entraînement du modèle de détection de tumeurs" /></span>
+									- <strong>Prétraitement des images : </strong>amélioration de la qualité des données en vue de l'apprentissage, avec ajustements de contraste et de netteté, redimensionnement et suppression de bruit. <br />
+									- <strong>Autoencodeurs : </strong>extraction non supervisée de caractéristiques importantes, facilitant la segmentation et la reconnaissance des zones potentiellement tumorales. <br />
+									- <strong>Modèle de classification : </strong>mise en place et entraînement d'un CNN pour détecter les tumeurs sur les images prétraitées. <br />
 								</p>
 
-								<h2 id="airbnb-section">Implémentation de l'algorithme des k plus proches voisins (KNN) en C pour la prédiction de prix sur Airbnb
-									<a href="https://github.com/MiraiLouis/KNN-for-Airbnb" class="icon brands fa-github alt" style="text-decoration: none; margin-left: 10px; font-size: 0.5em;">
+								<h3 id="airbnb-section">
+									Implémentation de l'algorithme des k plus proches voisins en C
+									<a href="https://github.com/MiraiLouis/KNN-for-Airbnb" class="icon brands fa-github alt repo-link">
 										<span class="label">GitHub</span>
 									</a>
-								</h2>
-								<p>L'objectif de ce projet était de prédire le prix des logements Airbnb en utilisant l'algorithme des k plus proches voisins (KNN). Voici les étapes principales du processus :</p>
-								<p><span class="image left"><img src="images/Illu-2-KNN.jpg" alt="" /></span>
-									- <strong>Prétraitement des données : </strong> Importation des données depuis un fichier CSV pour recueillir des informations sur les logements, comme leur localisation, leur taille, ou leurs équipements. <br>
-									- <strong>Calcul des distances :</strong>Pour chaque logement à prédire, les distances avec les autres logements sont calculées en fonction de plusieurs critères (par exemple, distance géographique, nombre de chambres, équipements, etc.). Ces distances permettent d'identifier les logements les plus similaires. <br>
-									<span class="image left"><img src="images/prices.webp" alt="" /></span>
-									- <strong>Tri des voisins :</strong>Les logements sont ensuite triés en fonction des distances calculées, afin de sélectionner les k logements les plus proches (les "voisins"). <br>
-									- <strong>Calcul de la prédiction :</strong>Une fois les k voisins identifiés, la moyenne de leurs prix est calculée pour obtenir une estimation du prix du logement cible.<br>
-									- <strong>Évaluation et validation :</strong>Les prédictions sont comparées aux prix réels (si disponibles) pour évaluer la précision du modèle. Des tests sont effectués pour ajuster le choix des critères et des valeurs de k, optimisant ainsi les performances du modèle.<br> <br>
+								</h3>
+								<p class="stack">C &middot; Algorithmique</p>
+								<p>L'objectif était de prédire le prix des logements Airbnb avec l'algorithme des k plus proches voisins (KNN), implémenté de zéro en C plutôt qu'avec une librairie.</p>
+								<p><span class="image left"><img src="images/Illu-2-KNN.jpg" alt="Illustration du principe de l'algorithme des k plus proches voisins" /></span>
+									- <strong>Prétraitement des données : </strong>import depuis un fichier CSV des informations sur les logements (localisation, taille, équipements). <br />
+									- <strong>Calcul des distances : </strong>pour chaque logement à prédire, calcul des distances aux autres logements selon plusieurs critères (distance géographique, nombre de chambres, équipements), afin d'identifier les logements les plus similaires. <br />
+									- <strong>Tri des voisins : </strong>tri par distance croissante pour sélectionner les k logements les plus proches. <br />
+									- <strong>Prédiction : </strong>moyenne des prix des k voisins retenus pour estimer le prix du logement cible. <br />
+									- <strong>Évaluation : </strong>comparaison des prédictions aux prix réels, et ajustement des critères et de la valeur de k pour optimiser les performances. <br />
 								</p>
 
-								<h2 id="astar-section">Algorithme A* dans un environnement inconnu simplifié
-									<a href="https://github.com/MiraiLouis/Astar" class="icon brands fa-github alt" style="text-decoration: none; margin-left: 10px; font-size: 0.5em;">
+								<h3 id="astar-section">
+									Algorithme A* dans un environnement inconnu
+									<a href="https://github.com/MiraiLouis/Astar" class="icon brands fa-github alt repo-link">
 										<span class="label">GitHub</span>
 									</a>
-								</h2>
-								<p>Ce projet visait à appliquer l'algorithme A* pour naviguer dans un environnement non exploré, dans le but de trouver le chemin le plus court vers un objectif. Voici les étapes principales :</p>
-								<p><span class="image left"><img src="images/maze.png" alt="" /></span>
-									- <strong>Modélisation de l'environnement : </strong> Un laser LIDAR a été utilisé pour scanner l’espace et construire progressivement une matrice représentant l'environnement. Cette matrice sert de base à la recherche de chemin en définissant les zones libres et les obstacles. <br>
-									- <strong>Recherche du plus court chemin : </strong>L'algorithme A* a été appliqué pour explorer les chemins possibles dans la matrice, en tenant compte des coûts de déplacement et des heuristiques de distance pour identifier le chemin le plus efficace vers la cible.<br>
-									- <strong>Programmation et traversée de graphes : </strong>Le système est capable d'ajuster dynamiquement le parcours en fonction des nouvelles informations reçues du LIDAR, modélisé par une fonction dans le programme. <br>
+								</h3>
+								<p class="stack">Algorithmique &middot; Parcours de graphes &middot; LIDAR simulé</p>
+								<p>Ce projet visait à appliquer l'algorithme A* pour naviguer dans un environnement non exploré, afin de trouver le chemin le plus court vers un objectif.</p>
+								<p><span class="image left"><img src="images/maze.png" alt="Labyrinthe utilisé comme environnement de test pour l'algorithme A*" /></span>
+									- <strong>Modélisation de l'environnement : </strong>un laser LIDAR simulé scanne l'espace et construit progressivement une matrice représentant l'environnement, en distinguant zones libres et obstacles. <br />
+									- <strong>Recherche du plus court chemin : </strong>A* explore les chemins possibles dans cette matrice, en tenant compte des coûts de déplacement et d'une heuristique de distance. <br />
+									- <strong>Replanification : </strong>le parcours est ajusté dynamiquement à mesure que de nouvelles informations remontent du LIDAR. <br />
 								</p>
 
-								<h2 id="autres-section">Autres projets</h2>
-								<p>En dehors des travaux précédemment présentés, j'ai également travaillé sur les projets suivants:</p>
-									- <strong>Site de cuisine : </strong> Développement d'un site de recette de cuisine from scratch. Projet développé en utilisant les technologies suivantes: HTML, CSS, PHP et JavaScript. <br>
-									- <strong>Application Java avec interface graphique </strong>Développement du jeu Quoridor en Java, GUI développé avec JavaFX<br>
-								</p>
+								<h3 id="autres-section">Autres projets</h3>
+								<p>En dehors des travaux présentés ci-dessus, j'ai également travaillé sur les projets suivants :</p>
+								<ul>
+									<li><strong>Site de recettes de cuisine : </strong>développement d'un site from scratch en HTML, CSS, PHP et JavaScript.</li>
+									<li><strong>Application Java avec interface graphique : </strong>développement du jeu Quoridor en Java, avec une interface JavaFX.</li>
+								</ul>
 
 								<footer class="major">
 									<ul class="actions special">
-										<li><a href="index.html" style=" color: inherit;">Retour</a></li>
+										<li><a href="index.html" class="button">Retour à l'accueil</a></li>
+										<li><a href="parcours.html" class="button">Voir mon parcours</a></li>
 									</ul>
 								</footer>
-								
+
 							</section>
 
 					</div>
@@ -115,21 +152,12 @@
 							<dt>Email</dt>
 							<dd><a href="mailto:chenlouis.pro@gmail.com">chenlouis.pro@gmail.com</a></dd>
 							<dt>LinkedIn</dt>
-							<dd><a href="https://www.linkedin.com/in/louis-chen-cy/" target="_blank">Mon profil</a></dd>
+							<dd><a href="https://www.linkedin.com/in/louis-chen-cy/" target="_blank" rel="noopener">Mon profil</a></dd>
 							<dt>GitHub</dt>
-							<dd><a href="https://github.com/MiraiLouis" target="_blank">Mon GitHub</a></dd>
+							<dd><a href="https://github.com/MiraiLouis" target="_blank" rel="noopener">Mon GitHub</a></dd>
 						</dl>
-						<!-- <ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-							<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-						</ul> -->
 					</section>
-					<!-- <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p> -->
 				</footer>
-
 
 			</div>
 

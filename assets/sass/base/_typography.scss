@@ -69,8 +69,8 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: _font(weight);
-		line-height: 1.5;
+		font-weight: _font(weight-heading);
+		line-height: 1.4;
 		margin: 0 0 (_size(element-margin) * 0.35) 0;
 		letter-spacing: _font(letter-spacing);
 

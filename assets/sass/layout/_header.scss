@@ -27,8 +27,8 @@
 			}
 
 			> * {
-				@include vendor('transition', 'opacity 3s ease');
-				@include vendor('transition-delay', '0.5s');
+				@include vendor('transition', 'opacity 0.4s ease');
+				@include vendor('transition-delay', '0s');
 				opacity: 1;
 			}
 
@@ -105,11 +105,11 @@
 		body.is-preload & {
 			&.alt {
 				> * {
-					opacity: 0;
+					opacity: 1;
 				}
 
 				.logo {
-					@include vendor('transform', 'scale(0.8) rotate(-30deg)');
+					@include vendor('transform', 'none');
 				}
 			}
 		}
