@@ -9,7 +9,7 @@
 		<title>Mes projets — Louis CHEN</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Projets en intelligence artificielle de Louis CHEN : RAG et agents IA chez Thales, classification NLP multilabel, prédiction du churn, vision par ordinateur et algorithmique." />
+		<meta name="description" content="Projets en intelligence artificielle de Louis CHEN : classification NLP multilabel, prédiction du churn, prévision de ventes, vision par ordinateur et algorithmique." />
 		<link rel="icon" href="images/logo.svg" type="image/svg+xml" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -31,19 +31,6 @@
 						<!-- Content -->
 							<section id="content" class="main">
 
-								<h2 class="project-group">Projets professionnels</h2>
-
-								<h3 id="thales-section">Génération de code AltaRica par RAG et orchestration d'agents IA</h3>
-								<p class="stack">Thales &middot; 2025 &middot; LangChain, LangGraph, llama-server</p>
-								<p>Ce projet, mené lors de mon stage d'ingénieur IA chez Thales, visait à appliquer l'IA générative à la modélisation de sûreté de fonctionnement (MBSA). Le travail a couvert l'ensemble de la chaîne, de l'analyse du besoin à l'évaluation de la solution :</p>
-								<p>
-									- <strong>Conception d'architecture : </strong>étude et présentation de plusieurs architectures de solutions IA auprès de parties prenantes métiers et techniques, afin d'arbitrer entre coût, latence et fiabilité des sorties. <br />
-									- <strong>Système RAG : </strong>développement d'un pipeline de génération automatique de code AltaRica, un langage de modélisation propre à l'analyse de sûreté. Le RAG s'appuie sur une base de modèles existants et de documentation afin de contraindre la génération à la syntaxe et aux conventions du langage. <br />
-									- <strong>Orchestrateur d'agents : </strong>conception d'un orchestrateur d'agents IA pour le logiciel MBSA System Analyst, enchaînant les étapes de modélisation pour que l'ingénieur se concentre sur la validation plutôt que sur la rédaction du modèle. <br />
-									- <strong>Validation : </strong>évaluation sur un cas d'étude réel, où la solution a ramené le temps de modélisation d'une semaine à une journée. <br />
-								</p>
-								<p>Les modèles étaient servis localement via llama-server, une contrainte forte du contexte industriel qui a orienté les choix d'architecture vers des modèles de taille modérée et un découpage fin des tâches entre agents.</p>
-
 								<h2 class="project-group">Projets data et machine learning</h2>
 
 								<h3 id="nlp-section">Classification de contenus textuels sensibles</h3>
@@ -62,6 +49,20 @@
 									- <strong>Analyse exploratoire : </strong>identification des variables associées au départ des clients et construction de variables dérivées. <br />
 									- <strong>Modélisation : </strong>entraînement et comparaison de plusieurs modèles de classification. <br />
 									- <strong>Optimisation économique : </strong>choix du seuil de décision en fonction du coût d'une action de rétention et du revenu préservé, plutôt que sur la seule maximisation d'un score. Cette approche permet de dimensionner concrètement une campagne de rétention. <br />
+								</p>
+
+								<h3 id="sales-section">
+									Prévision des ventes à 7 jours
+									<a href="https://github.com/MiraiLouis/Future-Sales-Prediction" class="icon brands fa-github alt repo-link" target="_blank" rel="noopener">
+										<span class="label">GitHub</span>
+									</a>
+								</h3>
+								<p class="stack">2026 &middot; Séries temporelles &middot; SARIMAX, Holt-Winters, XGBoost</p>
+								<p>Prévision du chiffre d'affaires sur les sept jours suivant la dernière date d'entraînement, à partir de données de ventes au niveau transaction converties en série temporelle journalière continue.</p>
+								<p>
+									- <strong>Analyse exploratoire : </strong>contrôles de qualité des données, tendance journalière et moyennes glissantes, profil de saisonnalité hebdomadaire, vues mensuelles et annuelles, diagnostics de valeurs aberrantes et tests de stationnarité (ADF et KPSS). <br />
+									- <strong>Comparaison de modèles : </strong>mise en concurrence d'une baseline naïve, d'une baseline saisonnière à décalage hebdomadaire, d'un Holt-Winters additif et d'une grille SARIMAX, complétées par une approche XGBoost ascendante par catégorie de produits. <br />
+									- <strong>Sélection : </strong>arbitrage sur la MAE en validation croisée, avec une règle de parcimonie retenant le modèle le plus simple parmi ceux situés à moins de 2 % de la meilleure erreur, afin d'éviter de payer de la complexité pour un gain négligeable. <br />
 								</p>
 
 								<h2 class="project-group">Projets académiques</h2>
@@ -147,8 +148,6 @@
 					<section>
 						<h2>Me contacter</h2>
 						<dl class="alt">
-							<dt>Téléphone</dt>
-							<dd>06 66 64 72 75</dd>
 							<dt>Email</dt>
 							<dd><a href="mailto:chenlouis.pro@gmail.com">chenlouis.pro@gmail.com</a></dd>
 							<dt>LinkedIn</dt>
